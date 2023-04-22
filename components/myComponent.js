@@ -4,11 +4,11 @@ export default{
         ws.postMessage({action: "showCard"})
         ws.addEventListener("message", (e) => {
             console.log();
-            /* document.querySelector(".ppp").innerHTML = data.forEach(val =>{
-                val.name;
-            }); */
+            let doc = new DOMParser().parseFromString(`<h1>${e.data.dataPokemones.name}</h1><br><img src="${e.data.dataPokemones.sprites.front_default}" alt="">`, "text/html");
+            document.querySelector(".ppp").append(...doc.body.children)
+             
         })
-
+       
     },
     /* useData(){
         

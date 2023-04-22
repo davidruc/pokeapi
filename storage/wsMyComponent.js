@@ -11,7 +11,7 @@ let wsMyComponent ={
         }
         
         getPokemon().then(data => {
-            console.log(data.results);
+            
             const urlss = [];
             let nameUrl = ``;
             data.results.forEach((val,id) => {
@@ -20,13 +20,14 @@ let wsMyComponent ={
             });
             console.log(urlss);
             const dataPokemones = [];
-            urlss.forEach((val)=>{
+            urlss.forEach(val =>{
+                
                 async function infoPokemon(){
                     try {
                         const response = await fetch(val)
-                        const data = await response.json();
-                        dataPokemones.push(data)
-                        return data
+                        const data2 = await response.json();
+                        dataPokemones.push(data2)
+                        return data2
                     } catch (error){
                         console.error(error);
                     } 
@@ -34,11 +35,7 @@ let wsMyComponent ={
 
                 }
                 infoPokemon().then(data => {
-                    dataPokemones.forEach(val =>{
-                        console.log(val.name); 
-                        const nombres = val.name;
-                    });
-                    self.postMessage({ pokemones: data });
+                    self.postMessage({ dataPokemones: data });
                 })
             })
         });
