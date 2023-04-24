@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
 .logo{
     width: 25%;
 }
@@ -5,10 +10,17 @@
     width: 13%;
     
 }
+body{
+  background-image: url(./img/wp3228884.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .card img {
     padding: 5%;
     width: 155px;
     height: 160px;
+    image-rendering: crisp-edges
 }
 .ppp{
     margin: 5% 15%;

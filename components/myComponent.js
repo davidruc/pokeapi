@@ -46,7 +46,7 @@ export default{
                             <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
                         </div>
                         <p class="card-footer">
-                        height : ${e.data.dataPokemones.height} m &nbsp; | &nbsp; weight : ${e.data.dataPokemones.weight} kg
+                        height : ${e.data.dataPokemones.height/10} m &nbsp; | &nbsp; weight : ${e.data.dataPokemones.weight/10} kg
                         </p>
                         </div>
                     </div>
