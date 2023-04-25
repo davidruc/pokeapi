@@ -31,8 +31,6 @@ let wsMyComponent ={
                     } catch (error){
                         console.error(error);
                     } 
- 
-
                 }
                 infoPokemon().then(data => {
                     self.postMessage({ dataPokemones: data });
@@ -42,8 +40,5 @@ let wsMyComponent ={
     }
 }
 self.addEventListener("message", (e)=>{
-    if (e.data.action === "showCard") {
-        wsMyComponent.showCard();
-    }
-   /*  postMessage(wsMyComponent[`${e.data.module}`](e.data.data)) */
+    postMessage(wsMyComponent[`${e.data.action}`]())
 })
