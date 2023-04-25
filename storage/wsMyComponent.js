@@ -18,7 +18,7 @@ let wsMyComponent ={
               nameUrl = `https://pokeapi.co/api/v2/pokemon/${val.name}`;
               urlss.push(nameUrl);
             });
-            console.log(urlss);
+        
             const dataPokemones = [];
             urlss.forEach(val =>{
                 
