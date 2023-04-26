@@ -60,13 +60,11 @@ let wsMyComponent ={
                         } 
                     }   
                 infoTipos().then(data4 => {
-                    console.log(data4);
+                    
                     self.postMessage({data : data4})
                 })
             })
         })
-            
-        
     }
 }
 self.addEventListener("message", (e)=>{
