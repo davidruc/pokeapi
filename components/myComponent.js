@@ -4,6 +4,7 @@ export default{
         const ws = new Worker("../storage/wsMyComponent.js", {type:"module"});
         ws.postMessage({action: "showCard"})
         ws.addEventListener("message", (e) => {
+           
             let doc = new DOMParser().parseFromString(`
             <div class="card">
                 <div class="content">
@@ -121,45 +122,17 @@ export default{
         })
     },
     botonesPokemones(){
-        
-        const tipo = document.querySelectorAll(".botones");
-        let html = [];
-        let variable = '';
-    
+        const ws = new Worker("../storage/wsMyComponent.js", {type:"module"});
+        const tipo = document.querySelectorAll(".botones");     
         tipo.forEach((buton)=>{
             buton.addEventListener("click",(e)=>{
-                
+                document.querySelector(".ppp").innerHTML = ""
                 const data2 = e.target.getAttribute("data-type");
-         
-                async function tiposPokenes(){
-                    try {
-                        const response = await fetch(`https://pokeapi.co/api/v2/type/${data2}/`);
-                        const data3 = await response.json();
-                        return data3;
-                    }catch (error){
-                        console.error(error);
-                    }
-                }
-                tiposPokenes().then(data3 => {
-                    data3.pokemon.forEach(elemt => {
-                     
-                        async function infoTipos(){
-                            try {
-                                const response = await fetch(elemt.pokemon.url)
-                                const data4 = await response.json();
-                                return data4
-                            } catch (error){
-                                console.error(error);
-                            } 
-                            
-                            } 
-                
-                    
-                    infoTipos().then(data4 => {
-                    
-                        
-                        
-                            variable = `
+                const url = `https://pokeapi.co/api/v2/type/${data2}/`
+                ws.postMessage({action : "searchType", url: url});
+                ws.addEventListener("message", (e) => {
+                console.log(e.data.data.id);    
+                let doc2 = new DOMParser().parseFromString(`
                 <div class="card">
                     <div class="content">
                         <div class="back">
@@ -171,12 +144,12 @@ export default{
                             <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
     
                             <g id="SVGRepo_iconCarrier">
-                            <h1 class="ids">#</h1>
-                            <img src="" class="card-img-top" alt="...">
+                            <h1 class="ids">#${e.data.data.id}</h1>
+                            <img src="${e.data.data.sprites.front_default}" class="card-img-top" alt="...">
                             </g>
     
                             </svg>
-                            <strong>${data4.name}</strong>
+                            <strong>${e.data.data.name}</strong>
                         </div>
                         </div>
                         <div class="front">
@@ -191,7 +164,7 @@ export default{
                         </div>
     
                         <div class="front-content">
-                            <small class="badge">type: </small>
+                            <small class="badge">type: ${e.data.data.types[0].type.name}</small>
                             <div class="description">
                             <div class="title">
                                 <p class="title">
@@ -208,26 +181,13 @@ export default{
                     </div>
                     </div>
                 `, "text/html"
-            
-                html.push(variable)    
-                     
-                
-                
-                
-                
-            });
-            
-            /* 
-            */
+                        )
+               
+                if(e.data.data.sprites.front_default != null){
+                    document.querySelector(".ppp").append(...doc2.body.children)    
+                }
         })
-        /* document.querySelector(".ppp").innerHTML = val; */
-        
     })
-    console.log(html);
-    html.map((val)=>{
-        console.log(val);
-    })
-        })
     });
 }
 }

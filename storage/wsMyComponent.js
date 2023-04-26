@@ -2,7 +2,7 @@ let wsMyComponent ={
     showCard(){
         async function getPokemon(){
             try {
-                const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1281')
+                const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=181')
                 const data = await response.json();
                 return data
             }catch (error){
@@ -37,8 +37,38 @@ let wsMyComponent ={
                 })
             })
         });
+    },
+    searchType(url){
+        console.log("aaaaaa ",url);
+            async function tiposPokenes(){
+                try {
+                    const response = await fetch(url);
+                    const data3 = await response.json();
+                    return data3;
+                }catch (error){
+                    console.error(error);
+                }
+            }tiposPokenes().then(data3 => {
+                data3.pokemon.map(elemt => {
+                    async function infoTipos(){
+                        try {
+                            const response = await fetch(elemt.pokemon.url)
+                            const data4 = await response.json();
+                            return data4
+                        } catch (error){
+                            console.error(error);
+                        } 
+                    }   
+                infoTipos().then(data4 => {
+                    console.log(data4);
+                    self.postMessage({data : data4})
+                })
+            })
+        })
+            
+        
     }
 }
 self.addEventListener("message", (e)=>{
-    postMessage(wsMyComponent[`${e.data.action}`]())
+    postMessage(wsMyComponent[`${e.data.action}`](e.data.url))
 })
