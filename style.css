@@ -4,7 +4,11 @@
   
 }
 .logo{
-    width: 25%;
+    width: 40vh;
+    height: 20vh;
+}
+.ey{
+  color: #1c2c6a;
 }
 .card{
     width: 13%;
@@ -23,7 +27,7 @@ body{
     image-rendering: crisp-edges
 }
 .ppp{
-    margin: 5% 15%;
+    margin: 1% 15%;
 }
 
 
@@ -123,21 +127,25 @@ body{
   .botones{
     background-color: aliceblue;
     border-radius: 100%;
-    padding: 60px;
+    /* padding: 25px; */
     border: none;
-    
+    width: 60px;
+    height: 60px;
+  
   }
+   
   .navar{
      background-color: lightblue;
+
+     margin: 1% 15%;
+     border-radius: 30px;
      padding: 1%;
-     display: flex;
-     justify-content: center;
-     flex-wrap:wrap;
-     gap: 1.2%;
   }
   .botones img{
     pointer-events: none;
   }
+ 
+
 
   .boto{
     width: 9vh; 

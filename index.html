@@ -12,32 +12,43 @@
 </head>
 <body >
     
-    <div class="w-100 d-flex justify-content-center ">
-        <img class="logo m-4 " src="img/International_Pokémon_logo.svg.png" alt="">
-    </div>
-    <nav class="navar" style="row-gap: 1.2%;">
-        <button class="botones" data-type="water" style="background-image: url(./img/agua1.jpg);background-size: cover ">  </button>
-        <button class="botones" data-type="grass" style="background-image: url(./img/grass.jpg);background-size: cover; background-position-x: center; ">    </button>
-        <button class="botones" data-type="electric" style="background-image: url(./img/pikachu.jpg);background-size: cover; background-position-x: center; ">   </button>
-        <button class="botones" data-type="ground" style="background-image: url(./img/tierra.jpg);background-size: cover; background-position-x: center; "> </button>
-        <button class="botones" data-type="rock" style="background-image: url(./img/rock.jpg);background-size: cover; background-position-x: center; "></button>  
-        <button class="botones" data-type="fire" style="background-image: url(./img/fire.jpg);background-size: cover; background-position-x: center; ">   </button>
-        <button class="botones" data-type="steel"style="background-image: url(./img/magneto.jpg);background-size: cover;  background-position-x: center; " >  </button>
-        <button class="botones" data-type="psychic" style="background-image: url(./img/hipno.jpg);background-size: cover; background-position-x: center; "> </button>
-        <button class="botones" data-type="ice" style="background-image: url(./img/ice.jpg);background-size: cover; background-position-x: center; "> </button>
-        <button class="botones" data-type="dragon" style="background-image: url(./img/drag.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt="">  </button>
-        <button class="botones" data-type="normal" style="background-image: url(./img/normal.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
-        <button class="botones" data-type="fighting" style="background-image: url(./img/peleador.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
-        <button class="botones" data-type="flying"style="background-image: url(./img/volador.jpg);background-size: cover; background-position-x: center; " > <img class="boto" src="" alt=""> </button>
-        <button class="botones" data-type="poison" style="background-image: url(./img/veneno.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
-        <button class="botones" data-type="bug" style="background-image: url(./img/bicho.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
-        <button class="botones" data-type="ghost" style="background-image: url(./img/gosth.jpg);background-size: cover; background-position-x:right;  "> <img class="boto" src="" alt=""> </button>
-        <button class="botones" data-type="dark"style="background-image: url(./img/dark.jpg);background-size: cover; background-position-x: center; " > <img class="boto" src="" alt=""> </button>
-        <button class="botones" data-type="fairy" style="background-image: url(./img/psic.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
-       
+    <nav class="navar d-flex flex-wrap" >
+        <div class="col-12 col-lg-5 d-flex justify-content-center align-items-center">
+            <img class="logo py-3 " src="img/International_Pokémon_logo.svg.png" alt="">
+        </div>
+        
+        <div class="col-12 col-lg-7 d-flex flex-column gap-2 ">
+            <div class="d-flex justify-content-center">
+                <p class="px-5 m-0 ey"><strong> Seleccionador por tipo de pokemon: </strong></p>
+            </div>
+            <div class="d-flex justify-content-center flex-wrap gap-2 ">
 
+                <button class="botones" title="water" data-type="water" style="background-image: url(./img/agua1.jpg);background-size: cover ">  </button>
+                <button class="botones" title="grass" data-type="grass" style="background-image: url(./img/grass.jpg);background-size: cover; background-position-x: center; ">    </button>
+                <button class="botones" title="electric" data-type="electric" style="background-image: url(./img/pikachu.jpg);background-size: cover; background-position-x: center; ">   </button>
+                <button class="botones" title="ground" data-type="ground" style="background-image: url(./img/tierra.jpg);background-size: cover; background-position-x: center; "> </button>
+                <button class="botones" title="rock" data-type="rock" style="background-image: url(./img/rock.jpg);background-size: cover; background-position-x: center; "></button>  
+                <button class="botones" title="fire" data-type="fire" style="background-image: url(./img/fire.jpg);background-size: cover; background-position-x: center; ">   </button>
+                <button class="botones" title="steel" data-type="steel"style="background-image: url(./img/magneto.jpg);background-size: cover;  background-position-x: center; " >  </button>
+                <button class="botones" title="psychic" data-type="psychic" style="background-image: url(./img/hipno.jpg);background-size: cover; background-position-x: center; "> </button>
+                <button class="botones" title="ice" data-type="ice" style="background-image: url(./img/ice.jpg);background-size: cover; background-position-x: center; "> </button>
+                <button class="botones" title="dragon" data-type="dragon" style="background-image: url(./img/drag.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt="">  </button>
+                <button class="botones" title="normal" data-type="normal" style="background-image: url(./img/normal.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
+                <button class="botones" title="fighting" data-type="fighting" style="background-image: url(./img/peleador.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
+                <button class="botones" title="flying" data-type="flying"style="background-image: url(./img/volador.jpg);background-size: cover; background-position-x: center; " > <img class="boto" src="" alt=""> </button>
+                <button class="botones" title="poison" data-type="poison" style="background-image: url(./img/veneno.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
+                <button class="botones" title="bug" data-type="bug" style="background-image: url(./img/bicho.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
+                <button class="botones" title="ghost" data-type="ghost" style="background-image: url(./img/gosth.jpg);background-size: cover; background-position-x:right;  "> <img class="boto" src="" alt=""> </button>
+                <button class="botones" title="dark" data-type="dark"style="background-image: url(./img/dark.jpg);background-size: cover; background-position-x: center; " > <img class="boto" src="" alt=""> </button>
+                <button class="botones" title="fairy" data-type="fairy" style="background-image: url(./img/psic.jpg);background-size: cover; background-position-x: center; "> <img class="boto" src="" alt=""> </button>
+            </div>
 
+        </div>
     </nav>
+    <div class="d-flex justify-content-center w-100 p-0 m-0">
+        <button id="showAll"  class="btn btn-dark">Mostrar Todos</button>
+
+    </div>
     <div class="ppp d-flex flex-wrap justify-content-center gap-3">
 
     </div>

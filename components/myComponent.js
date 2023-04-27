@@ -1,5 +1,5 @@
 export default{
-    
+
     getData(){
         const ws = new Worker("../storage/wsMyComponent.js", {type:"module"});
         ws.postMessage({action: "showCard"})
@@ -121,16 +121,14 @@ export default{
         tipo.forEach((buton)=>{
             
             buton.addEventListener("click",(e)=>{
+                
                 document.querySelectorAll('.card').forEach(card => card.remove());
-
-                /* document.querySelector(".ppp").innerHTML = "" */
                 const data2 = e.target.getAttribute("data-type");
                 const url = `https://pokeapi.co/api/v2/type/${data2}/`
                 ws.postMessage({action : "searchType", url: url});
             })
         });
-        ws.addEventListener("message", (e) => {
-        // console.log(e.data.data.id);    
+        ws.addEventListener("message", (e) => {   
         let doc2 = new DOMParser().parseFromString(`
         <div class="card">
             <div class="content">

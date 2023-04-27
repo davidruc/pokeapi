@@ -1,8 +1,9 @@
 let wsMyComponent ={
+
     showCard(){
         async function getPokemon(){
             try {
-                const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=181')
+                const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1281')
                 const data = await response.json();
                 return data
             }catch (error){
@@ -39,7 +40,6 @@ let wsMyComponent ={
         });
     },
     searchType(url){
-        console.log("aaaaaa ",url);
             async function tiposPokenes(){
                 try {
                     const response = await fetch(url);
