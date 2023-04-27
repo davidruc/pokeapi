@@ -128,7 +128,7 @@ export default{
             })
         });
         ws.addEventListener("message", (e) => {   
-        /* let doc2 = new DOMParser().parseFromString(`
+        let doc2 = new DOMParser().parseFromString(`
         <div class="card">
             <div class="content">
                 <div class="back">
@@ -181,7 +181,7 @@ export default{
        
         if(e.data.data.sprites.front_default != null){
             document.querySelector(".ppp").append(...doc2.body.children)    
-        } */
+        }
 })
 }
 }
