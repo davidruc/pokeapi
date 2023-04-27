@@ -1,4 +1,4 @@
-let wsMyComponent ={
+let wsMyComponents ={
 
     showCard(){
         async function getPokemon(){
@@ -68,5 +68,5 @@ let wsMyComponent ={
     }
 }
 self.addEventListener("message", (e)=>{
-    postMessage(wsMyComponent[`${e.data.action}`](e.data.url))
+    postMessage(wsMyComponents[`${e.data.action}`](e.data.url))
 })

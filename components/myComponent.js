@@ -1,7 +1,7 @@
 export default{
 
     getData(){
-        const ws = new Worker("./storage/wsMyComponent.js", {type:"module"});
+        const ws = new Worker("../storage/wsMyComponent.js", {type:"module"});
         ws.postMessage({action: "showCard"})
         ws.addEventListener("message", (e) => {
            
@@ -116,7 +116,7 @@ export default{
       
     },
     botonesPokemones(){
-        const ws = new Worker("./storage/wsMyComponent.js", {type:"module"});
+        const ws = new Worker("../storage/wsMyComponent.js", {type:"module"});
         const tipo = document.querySelectorAll(".botones");     
         tipo.forEach((buton)=>{
             
