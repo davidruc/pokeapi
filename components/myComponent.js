@@ -50,7 +50,7 @@ export default{
                         </p>
                         </div>
                     </div>
-                    </div>
+                    </div>x
                 </div>
                 </div>
             `, "text/html");
@@ -121,7 +121,6 @@ export default{
         tipo.forEach((buton)=>{
             
             buton.addEventListener("click",(e)=>{
-                
                 document.querySelectorAll('.card').forEach(card => card.remove());
                 const data2 = e.target.getAttribute("data-type");
                 const url = `https://pokeapi.co/api/v2/type/${data2}/`
